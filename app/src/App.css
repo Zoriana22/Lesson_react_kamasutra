@@ -10,29 +10,7 @@
   
 }
 
-.header {
-grid-area: h;
-background-color: rgb(206, 211, 144);
-}
-.header img {
-  width: 80px;
-  height: 50px;
-}
 
-.nav {
-grid-area: n;
-background-color: rgb(110, 55, 10);
-}
-
-.content {
- grid-area: c; 
- background-color: rgb(247, 231, 181);
-}
-
-.main-cont-img {
-  width: 1200px;
-  height: 400px;
-}
 
 
 
