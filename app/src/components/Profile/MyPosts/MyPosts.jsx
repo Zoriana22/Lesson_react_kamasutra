@@ -3,6 +3,7 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = () => {
+ 
   return (
             <div>
               my posts
@@ -12,10 +13,11 @@ const MyPosts = () => {
                   <button>Add post</button>
                 </div>
 
-               <Post />
-               <Post />
-               <Post />
-               <Post />
+                <div className={s.posts}>
+                  <Post message = 'Hi, how are you?' /*likesCount = '25'*/ />
+                  <Post message = "It's my first post" /*likesCount = '27'*/ />
+                  
+                </div>
 
             </div>
     
