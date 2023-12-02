@@ -3,15 +3,15 @@
    
  const Like = () => {
   
-    //  useEffect(() => {
-    //  const likeButton = document.querySelector('.like-button');
-    //  const likeCount = document.querySelector('.like-count');
+      useEffect(() => {
+      const likeButton = document.querySelector('.likeButton');
+      const likeCount = document.querySelector('.likeCount');
 
-    //  likeButton.addEventListener('click', () => {
+      likeButton.addEventListener('click', () => {
 
-    //  const currentCount = parseInt(likeCount.textContent, 10);
-    //  likeCount.textContent = currentCount + 1;}) 
-    // }, [] );
+      const currentCount = parseInt(likeCount.textContent, 10);
+      likeCount.textContent = currentCount + 1;}) 
+     }, [] );
 
    return (
              <div>
