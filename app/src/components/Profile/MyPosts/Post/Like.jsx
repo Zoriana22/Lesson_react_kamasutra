@@ -1,26 +1,22 @@
- import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 
-   
- const Like = () => {
-  
-      useEffect(() => {
-      const likeButton = document.querySelector('.likeButton');
-      const likeCount = document.querySelector('.likeCount');
+const Like = (props) => {
+  useEffect(() => {
+    const likeButton = document.querySelector(`.likeButton-${props.id}`);
+    const likeCount = document.querySelector(`.likeCount-${props.id}`);
 
-      likeButton.addEventListener('click', () => {
-
+    likeButton.addEventListener("click", () => {
       const currentCount = parseInt(likeCount.textContent, 10);
-      likeCount.textContent = currentCount + 1;}) 
-     }, [] );
+      likeCount.textContent = currentCount + 1;
+    });
+  }, []);
 
-   return (
-             <div>
-                 <button className="likeButton">👍</button>
-                 <span className="likeCount">1</span>                   
-             </div>
-    
-    );
-    
+  return (
+    <div>
+      <button className={`likeButton-${props.id}`}>👍</button>
+      <span className={`likeCount-${props.id}`}>1</span>
+    </div>
+  );
 };
-  
- export default Like;
+
+export default Like;
