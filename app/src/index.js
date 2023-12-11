@@ -15,8 +15,7 @@ let rerenderEntireTree = (state) => {
     root.render(
 
         <App state={store.getState()}
-            addPost={store.addPost}
-            updateNewPostText={store.updateNewPostText} />
+            dispatch={store.dispatch.bind(store)} />
 
 
     );

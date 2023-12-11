@@ -1,14 +1,11 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import addPostActionCreator from '../../../redax/state';
+import updateNewPostTextActionCreator from '../../../redax/state';
 
 const MyPosts = (props) => {
 
-  // let posts = [
-  //  {id: 1, message: 'Hi, how are you?', likesCount: 10},
-  //  {id: 2, message: 'It is my first post', likesCount: 12},
-  //  {id: 3, message: 'It is greate', likesCount: 15},
-  // ]
 
   let postsElements =
     props.posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount} />)
@@ -16,12 +13,13 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.addPost();
+    props.dispatch(addPostActionCreator());
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+    let action = updateNewPostTextActionCreator(text);
+    props.dispatch(action);
   }
 
   return (

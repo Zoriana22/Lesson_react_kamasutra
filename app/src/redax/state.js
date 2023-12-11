@@ -1,4 +1,5 @@
 let store = {
+
   _state: {
 
     profilePage: {
@@ -25,34 +26,49 @@ let store = {
 
     },
   },
-  getState() {
-    return this._state;
-  },
   _callSubscriber() {
     alert('state was changed');
   },
-  addPost() {
 
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0,
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = ' ';
-    this._callSubscriber(this._state);
-  },
-  updateNewPostText(newText) {
-
-    this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
+  getState() {
+    return this._state;
   },
   subscribe(observer) {
     this._callSubscriber = observer;
   },
+
+
+  dispatch(action) { //action - объект {type: 'что сделать'}
+    if (action.type === 'ADD-POST') {
+
+      let newPost = {
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0,
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = ' ';
+      this._callSubscriber(this._state);
+    } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state);
+    }
+  }
 }
 
+export const addPostActionCreator = () => {
+  return {
+    type: 'ADD-POST',
+  }
+}
 
+export const updateNewPostTextActionCreator = (text) => {
+  return {
+    type: 'UPDATE-NEW-POST-TEXT',
+    newText: text,
+  }
+}
 
 
 export default store;
