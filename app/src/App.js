@@ -8,7 +8,7 @@ import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { updateNewPostText } from './redax/state.js';
+import store from './redax/state.js';
 //import { addPost } from './redax/state';
 
 
