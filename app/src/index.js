@@ -1,5 +1,5 @@
 import './index.css';
-import store from './redax/state';
+import store from './redux/state';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -15,7 +15,8 @@ let rerenderEntireTree = (state) => {
     root.render(
 
         <App state={store.getState()}
-            dispatch={store.dispatch.bind(store)} />
+            dispatch={store.dispatch.bind(store)}
+            store={store} />
 
 
     );

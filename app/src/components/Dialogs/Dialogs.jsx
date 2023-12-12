@@ -1,8 +1,9 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import DialogItem from './DialogItem/Dialogitem';
 import Message from './Message/Message';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../redux/state';
 
 // const DialogItem = (props) => {
 
@@ -20,38 +21,41 @@ import Message from './Message/Message';
 // }
 const Dialogs = (props) => {
 
-  // let dialogs = [
-  //   {id: 1, name: 'Dimych'},
-  //   {id: 2, name: 'Sasha'},
-  //   {id: 3, name: 'Vasja'},
-  // ]
+  let state = props.store.getState().dialogsPage;
 
-  // let messages = [
-  //   {id: 1, message: 'Hello'},
-  //   {id: 2, message: 'Hi'},
-  //   {id: 3, message: 'How are you?'},
-  //   {id: 4, message: 'I am happy'},
-  // ]
+  let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />)
+  let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id} />)
+  let newMessageBody = state.newMessageBody;
 
-  let dialogsElements = props.state.dialogs.map( d => <DialogItem name={d.name} id={d.id}/>)
-  let messagesElements = props.state.messages.map( m =>  <Message message={m.message} id={m.id}/>)
+  let onSendMessageClick = () => {
+    props.store.dispatch(sendMessageCreator());
+  }
+
+  let onNewMessageChange = (e) => {
+    let body = e.target.value;
+    props.store.dispatch(updateNewMessageBodyCreator(body));
+  }
 
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
         {dialogsElements}
-        {/* <DialogItem name={dialogs[0].name} id={dialogs[0].id}/>
-        <DialogItem name={dialogs[1].name} id={dialogs[1].id}/>
-        <DialogItem name={dialogs[2].name} id={dialogs[2].id}/> */}
+
       </div>
-        
+
       <div className={s.messages}>
-        {messagesElements}
-        {/* <Message message={messages[0].message} id={messages[0].id}/>
-        <Message message={messages[1].message} id={messages[1].id}/>
-        <Message message={messages[2].message} id={messages[2].id}/>
-        <Message message={messages[3].message} id={messages[3].id}/> */}
+        <div>{messagesElements}</div>
+
+        <div>
+          <div><textarea
+            value={newMessageBody}
+            onChange={onNewMessageChange}
+            placeholder='Enter your message'></textarea></div>
+          <div><button onClick={onSendMessageClick}>Send</button></div>
+        </div>
+
       </div>
+
     </div>
   )
 }
