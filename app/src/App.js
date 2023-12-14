@@ -8,8 +8,8 @@ import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import store from './redux/state.js';
-//import { addPost } from './redax/state';
+import store from './redux/store.js';
+
 
 
 const App = (props) => {
@@ -21,8 +21,6 @@ const App = (props) => {
         <Navbar />
         <div class="app-wrapper-content">
           <Routes>
-            {/* <Route path ='/profile' element = {<Profile />}/>
-            <Route path ='/dialogs/*' element = {<Dialogs />}/>  */}
 
             <Route path='/profile' element={<Profile
               profilePage={props.state.profilePage}
@@ -36,7 +34,7 @@ const App = (props) => {
             <Route path='/settings' element={<Settings />} />
 
           </Routes>
-          {/* <Profile /> */}
+
 
         </div>
       </div>
