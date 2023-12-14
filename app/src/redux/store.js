@@ -2,10 +2,6 @@ import dialogsReducer from "./dialogs-reducer";
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
 
-// const ADD_POST = 'ADD-POST';
-// const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-// const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-// const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
 
@@ -51,23 +47,17 @@ let store = {
 
 
   dispatch(action) { //action - объект {type: 'что сделать'}
-    
+
     this._state.profilePage = profileReducer(this._state.profilePage, action);
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
     this._state.sidebar = sidebarReducer(this._state.sidebar, action);
-    
+
     this._callSubscriber(this._state);
-    
+
   }
 }
 
-// export const addPostActionCreator = () => ( {type: ADD_POST,  })
-// export const updateNewPostTextActionCreator = (text) => 
-//   ({ type: UPDATE_NEW_POST_TEXT, newText: text,})
 
-// export const sendMessageCreator = () => ( {type: SEND_MESSAGE,  })
-// export const updateNewMessageBodyCreator = (body) => 
-//     ({ type: UPDATE_NEW_MESSAGE_BODY, body: body,})
 
 
 
@@ -78,8 +68,3 @@ export default store;
 
 window.store = store;
 
-//25:55
-// function duckDuckGoose(players, goose) {
-  
-//   return players[(goose-1)%players.length].name
-// }
