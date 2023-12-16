@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 
 const mapStateToProps = (state) => {
+
   return {
     posts: state.profilePage.posts,
     newPostText: state.profilePage.newPostText,
@@ -27,3 +28,4 @@ const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
 
 export default MyPostsContainer;
 
+//пушу повторно
