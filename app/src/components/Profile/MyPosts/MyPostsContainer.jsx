@@ -31,3 +31,5 @@ export default MyPostsContainer;
 //пушу повторно
 
 //Вася, посмотри, пожалуйста
+
+//npm i redux ++
