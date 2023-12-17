@@ -4,22 +4,22 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        {
-            id: 1, photoUrl: 'https://img.badfon.ru/wallpaper/big/6/57/melisa-kristina-devushka.jpg',
-            followed: true, fullName: 'Vasilii', status: 'superMentor', location: { city: 'Warsaw', country: 'Poland' }
-        },
-        {
-            id: 2, photoUrl: 'https://img.badfon.ru/wallpaper/big/6/57/melisa-kristina-devushka.jpg',
-            followed: false, fullName: 'Pavel', status: 'citizen', location: { city: 'Rostov', country: 'Russia' }
-        },
-        {
-            id: 3, photoUrl: 'https://img.badfon.ru/wallpaper/big/6/57/melisa-kristina-devushka.jpg',
-            followed: true, fullName: 'Slava', status: 'citizen', location: { city: 'Kaliningrad', country: 'Russia' }
-        },
-        {
-            id: 4, photoUrl: 'https://img.badfon.ru/wallpaper/big/6/57/melisa-kristina-devushka.jpg',
-            followed: false, fullName: 'Anatolii', status: 'citizen', location: { city: 'Los-Angeles', country: 'USA' }
-        },
+        // {
+        //     id: 1, photoUrl: 'https://masterpiecer-images.s3.yandex.net/164559656c6011ee8e7f3a7ca4cc1bdc:upscaled',
+        //     followed: true, fullName: 'Vasilii', status: 'superMentor', location: { city: 'Warsaw', country: 'Poland' }
+        // },
+        // {
+        //     id: 2, photoUrl: 'https://masterpiecer-images.s3.yandex.net/164559656c6011ee8e7f3a7ca4cc1bdc:upscaled',
+        //     followed: false, fullName: 'Pavel', status: 'citizen', location: { city: 'Rostov', country: 'Russia' }
+        // },
+        // {
+        //     id: 3, photoUrl: 'https://masterpiecer-images.s3.yandex.net/164559656c6011ee8e7f3a7ca4cc1bdc:upscaled',
+        //     followed: true, fullName: 'Slava', status: 'citizen', location: { city: 'Kaliningrad', country: 'Russia' }
+        // },
+        // {
+        //     id: 4, photoUrl: 'https://masterpiecer-images.s3.yandex.net/164559656c6011ee8e7f3a7ca4cc1bdc:upscaled',
+        //     followed: false, fullName: 'Anatolii', status: 'citizen', location: { city: 'Los-Angeles', country: 'USA' }
+        // },
     ],
 
 };
