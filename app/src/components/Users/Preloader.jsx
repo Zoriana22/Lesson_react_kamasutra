@@ -5,9 +5,10 @@ import styles from './Preloader.module.css'
 const Preloader = (props) => {
     return (
         <div>
-            <img src={preloader} alt="preloading" />
+            PLEASE WAIT
         </div>
     )
 }
 
 export default Preloader;
+//<img src={preloader} alt="preloading" />
