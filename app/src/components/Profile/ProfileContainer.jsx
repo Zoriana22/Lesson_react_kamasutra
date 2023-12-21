@@ -52,6 +52,5 @@ let mapStateToProps = (state) => {
     }
 }
 
-
 export default connect(mapStateToProps, { setUserProfile })(withRouter(ProfileContainer));
 //export default connect(mapStateToProps, { setUserProfile })(ProfileContainer);
