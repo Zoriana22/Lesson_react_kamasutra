@@ -34,7 +34,7 @@ let Users = (props) => {
                             {u.followed ?
                                 <button onClick={() => {
 
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/unfollow/${u.id}`, {
+                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
                                         withCredentials: true,
                                         headers: { 'API-KEY': 'bb0cb20a-6c00-42ea-96fb-f598fa987298' },
                                     })
