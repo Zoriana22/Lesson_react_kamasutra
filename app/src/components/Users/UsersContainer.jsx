@@ -55,7 +55,7 @@ class UsersContainer extends React.Component {
   };
 }
 
-let AuthRedirectComponent = withAuthRedirect(UsersContainer);
+//let AuthRedirectComponent = withAuthRedirect(UsersContainer);
 
 let mapStateToProps = (state) => {
   return {
@@ -68,6 +68,9 @@ let mapStateToProps = (state) => {
   }
 }
 
+// export default withAuthRedirect(connect(mapStateToProps,
+//   { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
+//   (UsersContainer));
 
 // export default connect(mapStateToProps, {
 //   follow,
@@ -77,8 +80,12 @@ let mapStateToProps = (state) => {
 //   getUsers,
 // })(UsersContainer);
 
-export default compose(
-  connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers, }),
-  withRouter(AuthRedirectComponent),
-)(UsersContainer)
+// export default compose(
+//   connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers, }),
+//   withRouter(AuthRedirectComponent),
+// )(UsersContainer)
 //
+export default compose(
+  withAuthRedirect,
+  connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
+)(UsersContainer)
