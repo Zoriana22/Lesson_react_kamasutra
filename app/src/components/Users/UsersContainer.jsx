@@ -81,3 +81,4 @@ export default compose(
   connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers, }),
   withRouter(AuthRedirectComponent),
 )(UsersContainer)
+//
