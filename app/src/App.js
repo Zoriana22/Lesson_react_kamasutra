@@ -8,7 +8,7 @@ import Settings from './components/Settings/Settings.jsx';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UsersContainer from './components/Users/UsersContainer.jsx';
 import ProfileContainer from './components/Profile/ProfileContainer.jsx';
-import Login from './components/Login/Login.jsx';
+import LoginPage from './components/Login/Login.jsx';
 import HeaderContainer from './components/Header/HeaderContainer.jsx';
 
 
@@ -30,7 +30,7 @@ const App = (props) => {
 
             <Route path='/users/*' element={<UsersContainer />} />
 
-            <Route path='/login/*' element={<Login />} />
+            <Route path='/login/*' element={<LoginPage />} />
 
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
