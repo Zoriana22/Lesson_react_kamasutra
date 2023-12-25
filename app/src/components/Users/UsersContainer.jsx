@@ -3,25 +3,24 @@ import { connect } from 'react-redux';
 import { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers } from '../../redux/users-reducer';
 import Users from './Users';
 import Preloader from './Preloader';
-import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
-import { compose } from 'redux';
+
 
 // wrapper to use react router's v6 hooks in class component(to use HOC pattern, like in router v5)
-function withRouter(Component) {
-  function ComponentWithRouterProp(props) {
-    let location = useLocation();
-    let navigate = useNavigate();
-    let params = useParams();
-    return (
-      <Component
-        {...props}
-        router={{ location, navigate, params }}
-      />
-    );
-  }
-  return ComponentWithRouterProp;
-}
+// function withRouter(Component) {
+//   function ComponentWithRouterProp(props) {
+//     let location = useLocation();
+//     let navigate = useNavigate();
+//     let params = useParams();
+//     return (
+//       <Component
+//         {...props}
+//         router={{ location, navigate, params }}
+//       />
+//     );
+//   }
+//   return ComponentWithRouterProp;
+// }
 
 class UsersContainer extends React.Component {
   constructor(props) {
@@ -68,24 +67,21 @@ let mapStateToProps = (state) => {
   }
 }
 
-// export default withAuthRedirect(connect(mapStateToProps,
-//   { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
-//   (UsersContainer));
+//export default withAuthRedirect(connect(mapStateToProps,
+//  { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
+// (UsersContainer));
 
-// export default connect(mapStateToProps, {
-//   follow,
-//   unfollow,
-//   setCurrentPage,
-//   toggleFollowingProgress,
-//   getUsers,
-// })(UsersContainer);
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setCurrentPage,
+  toggleFollowingProgress,
+  getUsers,
+})(UsersContainer);
+
+
 
 // export default compose(
-//   connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers, }),
-//   withRouter(AuthRedirectComponent),
-// )(UsersContainer)
-//
-export default compose(
-  withAuthRedirect,
-  connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
-)(UsersContainer)
+//   withAuthRedirect,
+//   connect(mapStateToProps, { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers })
+// )(UsersContainer);
